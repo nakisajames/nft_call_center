@@ -184,12 +184,20 @@ class CLookups:
         return self.extract_lookup('id', 'name', [dict({'id': "Yes", 'name': "Yes"}),
                                                   dict({'id': "No", 'name': "No"})])
 
-    def rate_reception(self):
-        return self.extract_lookup('id', 'name', [dict({'id': "1", 'name': "Yes"}),
-                                                  dict({'id': "0", 'name': "No"})])
-    def rate_staff_care(self):
-        return self.extract_lookup('id', 'name', [dict({'id': "1", 'name': "Yes"}),
-                                                  dict({'id': "0", 'name': "No"})])
+    def rate_nft_services(self):
+        return self.extract_lookup('id', 'name', [dict({'id': "1", 'name': "Poor"}),
+                                                  dict({'id': "2", 'name': "Below average"}),
+                                                  dict({'id': "3", 'name': "Average"}),
+                                                  dict({'id': "4", 'name': "Above average"}),
+                                                  dict({'id': "5", 'name': "Excellent"})])
+
+    def rate_nft_recommendation(self):
+        return self.extract_lookup('id', 'name', [dict({'id': "1", 'name': "Not at all likely"}),
+                                                  dict({'id': "2", 'name': "Not so likely"}),
+                                                  dict({'id': "3", 'name': "Somewhat likely"}),
+                                                  dict({'id': "4", 'name': "Very likely"}),
+                                                  dict({'id': "5", 'name': "Extremely likely"})])
+
 
     def get_name_by_id(self, item_id, lookup_list):
         for ele in lookup_list:

@@ -92,6 +92,30 @@ class SystemSetting(models.Model):
         db_table = "system_setting"
 
 
+class SatisfactionForm(models.Model):
+    id = models.CharField(max_length=50, primary_key=True)
+    agent = models.ForeignKey(UserAccount, on_delete=models.PROTECT, null=True, blank=True,
+                              related_name="satisfaction_form_agent")
+    consent = models.CharField(max_length=20)
+
+    rate_nft_services = models.TextField(null=True, blank=True)
+    why_rate_nft_services = models.TextField(null=True, blank=True)
+    rate_nft_recommendation = models.IntegerField(null=True, blank=True)
+    why_rate_nft_recommendation = models.TextField(null=True, blank=True)
+
+    improve_nft_experience = models.TextField(null=True, blank=True)
+    any_comments = models.TextField(null=True, blank=True)
+
+    entry_date = models.DateTimeField(null=True, blank=True)
+    entered_by = models.ForeignKey(UserAccount, on_delete=models.PROTECT, null=True, blank=True,
+                                   related_name="satisfaction_form_entered_by")
+    last_modified = models.DateTimeField(null=True, blank=True)
+    modified_by = models.ForeignKey(UserAccount, on_delete=models.PROTECT, null=True, blank=True,
+                                    related_name="satisfaction_form_modified_by")
+
+    class Meta:
+        db_table = "satisfaction_form"
+
 
 
 
