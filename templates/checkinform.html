@@ -1,0 +1,162 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ title }}</title>
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"
+    />
+    <meta name="description" content="{{ title }}">
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- jQuery -->
+    <script src="{% static 'plugins/jquery/jquery.js' %}" ></script>
+    <link rel="stylesheet" href="{% static 'kendoui/css/kendoui.css' %}" >
+    <link rel="stylesheet" href="{% static 'main.css' %}" >
+    <link rel="stylesheet" href="{% static 'plugins/sweetalert2/sweetalert2.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'plugins/pace/themes/blue/pace-theme-flash.css' %}" />
+    <script src="{% static 'plugins/pace/pace.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'plugins/daterangepicker/daterangepicker.css' %}" />
+    <script src="{% static 'plugins/daterangepicker/moment.min.js' %}"></script>
+    <script src="{% static 'plugins/daterangepicker/daterangepicker.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css' %}" />
+    <script src="{% static 'plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js' %}"></script>
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="{% static 'fontawesome-free/css/all.css' %}" />
+
+</head>
+
+<body>
+<style>
+/*chage front end color to be similar to client*/
+.forms-wizard li.done em {
+    background: #8dc63f;
+}
+.btn-success {
+    color: #fff;
+    background-color: #8dc63f;
+    border-color: #8dc63f;
+}
+</style>
+<div id="content_body">
+
+</div>
+
+<!-- sweetalert2 -->
+<script src="{% static 'plugins/sweetalert2/sweetalert2.min.js' %}" ></script>
+<!-- kendo App -->
+<script src="{% static 'kendoui/js/kendoui.js' %}" ></script>
+
+<script>
+   const EW = {
+       LANGUAGE_ID: "en",
+       PAGE_ID: "",
+       API_URL: "", // API file name
+       action: {
+           List: '{{ actions.List.code }}'
+           , Add: '{{ actions.Add.code }}'
+           , Edit: '{{ actions.Edit.code }}'
+           , SubmitAdd: '{{ actions.SubmitAdd.code }}'
+           , SubmitEdit: '{{ actions.SubmitEdit.code }}'
+           , Delete: '{{ actions.Delete.code }}'
+           , ExcelExport: '{{ actions.ExcelExport.code }}'
+           , PdfExport: '{{ actions.PdfExport.code }}'
+       },
+       records_per_page:{{ EW.records_per_page }}
+       , js_notification_timer:{{ EW.js_notification_timer }}
+        , notification_icon:'{{ EW.notification_icon }}'
+        , notification_click_url:'{{ EW.notification_click_url }}'
+   }
+</script>
+<script src="{% static 'global_code.js' %}" ></script>
+
+<!--Add offline google maps api
+<script src="{% static 'plugins/google_maps/google_maps_api_offline.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5r4DsYYly-d272kJopRlb9FCclcWokrE&callback=initMap"></script>
+-->
+
+
+<!--Add marker cluster library offline
+https://unpkg.com/@googlemaps/markerclustererplus@1.0.3/dist/index.min.js
+-->
+<script src="{% static 'plugins/google_maps/marker_clusterer.js' %}"></script>
+
+<script>
+
+
+//start the pace library
+$(document).ajaxStart(function() { Pace.restart(); });
+
+function front_end_showForm(object,action)
+{
+    var object_id = null;
+        $.ajax({
+        type: "POST",
+        cache: false,
+        url: "api",
+        dataType :"json",
+        data: { rand_time: new Date().getTime(), api_object: object, api_action: action, object_id: object_id} ,
+        success: function(response){
+          //console.log(response);
+          //read data out
+          if(response.error === false)
+          {
+            var html = response.html;
+            $("#content_body").html(html);
+
+          }
+          else
+          {
+               //show error message
+              ShowFailureMessage(response.error_msg)
+              console.log('failed to pick '+action+' error:'+response.error_msg);
+          }
+        },
+        error: function(data){
+        console.log('failed to Load form:',data);
+        //show error message
+        ShowFailureMessage("Oops Server failed to complete this request, Check your Internet Connection");
+
+        }
+        });
+
+
+}
+
+
+function DialogShowSuccessMessage(mesage)
+{
+
+    Swal.fire({
+		toast: false,
+		position: 'center',
+		showConfirmButton: false,
+		timer: 3000,
+		type: 'success',
+		title: mesage
+      })
+}
+
+
+
+
+
+$(function () {
+//load first page
+front_end_showForm('checkin','covid_registration_form');
+});
+
+
+</script>
+
+</body>
+</html>

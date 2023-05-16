@@ -1,0 +1,178 @@
+{% load static %}
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{{ title }}</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}" >
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="{% static 'adminlte/css/adminlte.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'main.css' %}" >
+    <link rel="stylesheet" href="{% static 'plugins/sweetalert2/sweetalert2.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'plugins/pace/themes/blue/pace-theme-flash.css' %}" />
+  <script src="{% static 'plugins/pace/pace.js' %}"></script>
+  </head>
+<body class="hold-transition sidebar-mini">
+<!-- Site wrapper -->
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+
+      <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Home</a>
+      </li>
+    </ul>
+
+
+      <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+
+      <li class="nav-item dropdown user-menu">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+          <img src="{% static 'images/user_avatar.png' %}" class="user-image img-circle elevation-2" alt="User Image">
+          <span class="d-none d-md-inline">{{ user_full_names }}</span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <!-- User image -->
+          <li class="user-header bg-primary">
+            <img src="{% static 'images/user_avatar.png' %}" class="img-circle elevation-2" alt="User Image">
+
+            <p>
+              {{ user_full_names }}
+              <small>{{ user_group_names }}</small>
+            </p>
+          </li>
+
+          <!-- Menu Footer-->
+          <li class="user-footer">
+            <a href="javascript:void(0);" class="btn btn-default btn-flat">Profile</a>
+            <a href="javascript:void(0);" onclick="SubmitLogOutForm()" class="btn btn-primary btn-flat float-right">Sign out</a>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link">
+      <span class="brand-text font-weight-light">{{ title }}</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+            {{ menu|safe }}
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 id="header_title">Header Title</h1>
+          </div>
+          <div id="breadcrumb_link" class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Blank Page</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title" id="content_title">Title</h3>
+
+        </div>
+        <div class="card-body" id="content_body">
+          Start creating your amazing application!
+        </div>
+        <!-- /.card-body -->
+
+      </div>
+      <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <footer class="main-footer">
+    <div class="float-right d-none d-sm-block">
+      <b>Version</b> 1.0
+    </div>
+     {{ footer }}
+  </footer>
+
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="{% static 'plugins/jquery/jquery.min.js' %}" ></script>
+<!-- Bootstrap 4 -->
+<script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}" ></script>
+<!-- sweetalert2 -->
+<script src="{% static 'plugins/sweetalert2/sweetalert2.min.js' %}" ></script>
+<!-- AdminLTE App -->
+<script src="{% static 'adminlte/js/adminlte.min.js' %}" ></script>
+
+<script>
+   const EW = {
+       LANGUAGE_ID: "en",
+       PAGE_ID: "",
+       API_URL: "", // API file name
+       action: {
+           List: '{{ actions.List.code }}'
+           , Add: '{{ actions.Add.code }}'
+           , Edit: '{{ actions.Edit.code }}'
+           , SubmitAdd: '{{ actions.SubmitAdd.code }}'
+           , SubmitEdit: '{{ actions.SubmitEdit.code }}'
+           , Delete: '{{ actions.Delete.code }}'
+           , ExcelExport: '{{ actions.ExcelExport.code }}'
+       },
+       records_per_page:{{ EW.records_per_page }}
+   }
+</script>
+<script src="{% static 'global_code.js' %}" ></script>
+
+<script>
+//start the pace library
+$(document).ajaxStart(function() { Pace.restart(); });
+
+//load first page
+ShowForm(null,'list','user_account');
+
+</script>
+
+</body>
+</html>
