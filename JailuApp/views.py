@@ -23,7 +23,7 @@ def index(request):
     user_group_names = Security.user_group_names()
     menu = Menu().draw_menu()
 
-    staring_page_object = "my_customer_experience"
+    staring_page_object = "my_satisfaction_form"
     staring_page_action = Actions.List.code
     staring_object_id = ""
     sidebar_logo = "/static/images/app_logo.png"
@@ -34,11 +34,15 @@ def index(request):
         staring_page_action = parameters.get("starting_action")
         staring_object_id = parameters.get("staring_object_id","")
     # check for other allowable actions
-
+    elif Security.check_permission("satisfaction_form",Actions.View.code) is True:
+        staring_page_object = "satisfaction_form"
+        staring_page_action = Actions.List.code
+    elif Security.check_permission("my_satisfaction_form",Actions.View.code) is True:
+        staring_page_object = "my_satisfaction_form"
+        staring_page_action = Actions.List.code
     elif Security.check_permission("user_account", Actions.View.code) is True:
         staring_page_object = "user_account"
         staring_page_action = Actions.List.code
-
 
     #  determine tour settings
     tour_data = my_custom_sql(
@@ -108,6 +112,12 @@ def api(request):
         elif parameters["api_object"] == "system_log":
             from JailuApp.classes.system_log import TableSystemLog
             api_response = TableSystemLog().perform_action(parameters)
+        elif parameters["api_object"] == "satisfaction_form":
+            from JailuApp.classes.satisfaction_form import TableSatisfactionForm
+            api_response = TableSatisfactionForm().perform_action(parameters)
+        elif parameters["api_object"] == "my_satisfaction_form":
+            from JailuApp.classes.my_satisfaction_form import TableMySatisfactionForm
+            api_response = TableMySatisfactionForm().perform_action(parameters)
 
 
 

@@ -280,6 +280,10 @@ class Menu:
 
     def __init__(self):
         self.items = list()
+        self.items.append(MenuItem(m_id='mi_my_satisfaction_form', m_icon='fas fa-plus'
+                                   , m_target_object='my_satisfaction_form', m_target_action=Actions.List.code))
+        self.items.append(MenuItem(m_id='mi_satisfaction_form', m_icon='fas fa-bars'
+                                   , m_target_object='satisfaction_form', m_target_action=Actions.List.code))
 
         self.items.append(
             MenuItem('mi_security_value_list', 'fas fa-lock'
@@ -355,7 +359,7 @@ class CSecurity:
         , Actions.View.code, Actions.PdfExport.code]
     super_admin_group_id = -1
     anonymous_group_id = -2
-    table_objects = ["user_group", "user_account", "system_log"
+    table_objects = ["user_group", "user_account", "system_log", "satisfaction_form", "my_satisfaction_form"
          ]
     is_logged_in = False
     user_profile = dict()

@@ -84,6 +84,42 @@
         <field id="modified_by" caption="Modified By" />
     </table>
 
+    <table id="satisfaction_form" caption="Customer Satisfaction">
+        <field id="id" caption="ID" />
+        <field id="agent" caption="Agent Name" />
+        <field id="phone_number" caption="Customer Phone Number" />
+        <field id="status" caption="Did the customer pick up the call?" />
+        <field id="consent" caption="1: Is it possible for me to have less than 3min of your time to get this feedback? If Yes proceed, If No terminate the process." />
+        <field id="rate_nft_services" caption="2: On a scale of 1-5 how would you rate the services NFT has offered to you? Tick appropriately." />
+        <field id="why_rate_nft_services" caption="Why did you choose the rating above?" />
+        <field id="rate_nft_recommendation" caption="3: On a scale of 1-5, how likely is it that you would recommend NFT Consult? Tick appropriately." />
+        <field id="why_rate_nft_recommendation" caption="Why did you choose the rating above?" />
+        <field id="improve_nft_experience" caption="4: How can we improve your experience with NFT Consult?" />
+        <field id="any_comments" caption="5: Do you have any other comments or feedback? " />
+        <field id="entry_date" caption="Entry Date" />
+        <field id="entered_by" caption="Entered By" />
+        <field id="last_modified" caption="Last Modified" />
+        <field id="modified_by" caption="Modified By" />
+    </table>
+
+    <table id="my_satisfaction_form" caption="My Customer Satisfaction">
+        <field id="id" caption="ID" />
+        <field id="agent" caption="Agent Name" />
+        <field id="phone_number" caption="Customer Phone Number" />
+        <field id="status" caption="Did the customer pick up the call?" />
+        <field id="consent" caption="1: Is it possible for me to have less than 3min of your time to get this feedback? If Yes proceed, If No terminate the process." />
+        <field id="rate_nft_services" caption="2: On a scale of 1-5 how would you rate the services NFT has offered to you? Tick appropriately." />
+        <field id="why_rate_nft_services" caption="Why did you choose the rating above?" />
+        <field id="rate_nft_recommendation" caption="3: On a scale of 1-5, how likely is it that you would recommend NFT Consult? Tick appropriately." />
+        <field id="why_rate_nft_recommendation" caption="Why did you choose the rating above?" />
+        <field id="improve_nft_experience" caption="4: How can we improve your experience with NFT Consult?" />
+        <field id="any_comments" caption="5: Do you have any other comments or feedback? " />
+        <field id="entry_date" caption="Entry Date" />
+        <field id="entered_by" caption="Entered By" />
+        <field id="last_modified" caption="Last Modified" />
+        <field id="modified_by" caption="Modified By" />
+    </table>
+
   </table_object>
   <menu>
       <phrase id="mi_user_group" caption="User Groups" />
@@ -91,5 +127,7 @@
       <phrase id="mi_system_log" caption="System Logs" />
       <phrase id="mi_settings_value_list" caption="System Setup" />
       <phrase id="mi_security_value_list" caption="Security Settings" />
+      <phrase id="mi_satisfaction_form" caption="Customer Satisfaction" />
+      <phrase id="mi_my_satisfaction_form" caption="My Customer Satisfaction" />
   </menu>
 </ew-language>

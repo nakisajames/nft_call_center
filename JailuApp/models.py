@@ -96,9 +96,11 @@ class SatisfactionForm(models.Model):
     id = models.CharField(max_length=50, primary_key=True)
     agent = models.ForeignKey(UserAccount, on_delete=models.PROTECT, null=True, blank=True,
                               related_name="satisfaction_form_agent")
-    consent = models.CharField(max_length=20)
+    phone_number = models.CharField(max_length=50, null=True, blank=True)
+    status = models.TextField(max_length=15, null=True, blank=True)
+    consent = models.CharField(max_length=20, null=True, blank=True)
 
-    rate_nft_services = models.TextField(null=True, blank=True)
+    rate_nft_services = models.IntegerField(null=True, blank=True)
     why_rate_nft_services = models.TextField(null=True, blank=True)
     rate_nft_recommendation = models.IntegerField(null=True, blank=True)
     why_rate_nft_recommendation = models.TextField(null=True, blank=True)

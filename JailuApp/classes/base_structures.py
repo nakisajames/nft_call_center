@@ -86,8 +86,7 @@ class TableFieldBase:
                 <div class='col-lg-8'>
                 <input onkeypress='""" + submit_on_enter + """' 
                  class='form-control' table_object_name='""" + self.table_object_name
-                       + """' field_object_name='""" + self.object_name + """' placeholder='"""
-                       + self.caption + """' id='x_""" + self.object_name + """' name='x_"""
+                       + """' field_object_name='""" + self.object_name + """'  id='x_""" + self.object_name + """' name='x_"""
                        + self.object_name + """' value='""" + self.str_default_add() + """'></input>
                 </div>
             """)
@@ -97,8 +96,7 @@ class TableFieldBase:
                 <input onkeypress='""" + submit_on_enter + """'  """ + (
                 "hidden='true' disabled='true'" if self.object_name == "id" else "")
                     + """ class='form-control' table_object_name='""" + self.table_object_name
-                    + """' field_object_name='""" + self.object_name + """' placeholder='"""
-                    + self.caption + """' id='x_""" + self.object_name + """' name='x_"""
+                    + """' field_object_name='""" + self.object_name + """'  id='x_""" + self.object_name + """' name='x_"""
                     + self.object_name + """' value='"""
                     + ( "" if is_empty(self.current_value) else str(self.current_value) ) + """'></input>
                 </div>
@@ -107,8 +105,7 @@ class TableFieldBase:
             return str("""
                 <div >
                 <input class='form-control' table_object_name='""" + self.table_object_name
-                       + """' field_object_name='""" + self.object_name + """' placeholder='"""
-                       + self.caption + """' id='xf_""" + self.object_name + """' name='xf_"""
+                       + """' field_object_name='""" + self.object_name + """'  id='xf_""" + self.object_name + """' name='xf_"""
                        + self.object_name + """' value='""" + str(
                         self.ex_search["value"]) + """'></input>
                 </div>
@@ -117,7 +114,7 @@ class TableFieldBase:
             html = """
                 <div class='col-lg-8'>
                 <select class='form-control' table_object_name='""" + self.table_object_name + """' field_object_name
-                ='""" + self.object_name + """' placeholder='""" + self.caption + """' id='x_""" + self.object_name +\
+                ='""" + self.object_name + """'  id='x_""" + self.object_name +\
                    """' name='x_""" + self.object_name + """' > 
                    <option value=''>""" + Lang.phrase('please_select') + """</option>
                 """
@@ -133,7 +130,7 @@ class TableFieldBase:
             html = """
                 <div class='col-lg-8'>
                 <select class='form-control' table_object_name='""" + self.table_object_name + """' field_object_name
-                ='""" + self.object_name + """' placeholder='""" + self.caption + """' id='x_""" + self.object_name +\
+                ='""" + self.object_name + """'  id='x_""" + self.object_name +\
                    """' name='x_""" + self.object_name + """' > 
                    <option value=''>""" + Lang.phrase('please_select') + """</option>
                 """
@@ -149,7 +146,7 @@ class TableFieldBase:
             html = """
                 <div class='col-lg-8'>
                 <select class='form-control' table_object_name='""" + self.table_object_name + """' field_object_name
-                ='""" + self.object_name + """' placeholder='""" + self.caption + """' id='x_""" + self.object_name +\
+                ='""" + self.object_name + """'  id='x_""" + self.object_name +\
                    """' name='x_""" + self.object_name + """' > 
                    <option value=''>""" + Lang.phrase('please_select') + """</option>
                 """
@@ -165,8 +162,7 @@ class TableFieldBase:
             return str("""
                 <div class='col-lg-8'>
                 <input class='form-control' table_object_name='""" + self.table_object_name
-                       + """' field_object_name='""" + self.object_name + """' placeholder='"""
-                       + self.caption + """' id='x_""" + self.object_name + """' name='x_"""
+                       + """' field_object_name='""" + self.object_name + """'  id='x_""" + self.object_name + """' name='x_"""
                        + self.object_name + """' value='""" + self.str_default_add() + """'></input>
                 <script>
                 $('#x_""" + self.object_name + """').datetimepicker({format: 'YYYY-MM-DD H:mm:ss',icons: {
@@ -182,8 +178,7 @@ class TableFieldBase:
             return ("""
                 <div class='col-lg-8'>
                 <input class='form-control' table_object_name='""" + self.table_object_name
-                    + """' field_object_name='""" + self.object_name + """' placeholder='"""
-                    + self.caption + """' id='x_""" + self.object_name + """' name='x_"""
+                    + """' field_object_name='""" + self.object_name + """'  id='x_""" + self.object_name + """' name='x_"""
                     + self.object_name + """' value='""" + str(
                         self.current_value) + """'></input>
                 <script>
@@ -200,7 +195,7 @@ class TableFieldBase:
             html = """
                 <div >
                 <input class='form-control' table_object_name='""" + self.table_object_name + """' 
-                 field_object_name='""" + self.object_name + """' placeholder='""" + self.caption + """' 
+                 field_object_name='""" + self.object_name + """'  
                   id='x_""" + self.object_name + """' name='x_""" + self.object_name + """' 
                   value='""" + str(self.ex_search["value"]) + """'></input>
                 <script>
@@ -217,7 +212,7 @@ class TableFieldBase:
                 html += """
                 <span class="badge bg-info">AND</span>
                 <input class='form-control' table_object_name='""" + self.table_object_name + """' 
-                 field_object_name='y_""" + self.object_name + """' placeholder='""" + self.caption + """2' 
+                 field_object_name='y_""" + self.object_name + """'  
                   id='y_""" + self.object_name + """' name='y_""" + self.object_name + """' 
                   value='""" + str(self.ex_search["value2"]) + """'></input>
                 <script>
@@ -236,8 +231,7 @@ class TableFieldBase:
             return str("""
                 <div class='col-lg-8'>
                 <input class='form-control' table_object_name='""" + self.table_object_name
-                       + """' field_object_name='""" + self.object_name + """' placeholder='"""
-                       + self.caption + """' id='x_""" + self.object_name + """' name='x_"""
+                       + """' field_object_name='""" + self.object_name + """'  id='x_""" + self.object_name + """' name='x_"""
                        + self.object_name + """' value='""" + self.str_default_add() + """'></input>
                 <script>
                 $('#x_""" + self.object_name + """').datetimepicker({format: 'YYYY-MM-DD',icons: {
@@ -253,8 +247,7 @@ class TableFieldBase:
             return ("""
                 <div class='col-lg-8'>
                 <input class='form-control' table_object_name='""" + self.table_object_name
-                    + """' field_object_name='""" + self.object_name + """' placeholder='"""
-                    + self.caption + """' id='x_""" + self.object_name + """' name='x_"""
+                    + """' field_object_name='""" + self.object_name + """'  id='x_""" + self.object_name + """' name='x_"""
                     + self.object_name + """' value='""" + str(
                         self.current_value) + """'></input>
                 <script>
@@ -271,7 +264,7 @@ class TableFieldBase:
             html = """
                 <div >
                 <input class='form-control' table_object_name='""" + self.table_object_name + """' 
-                 field_object_name='""" + self.object_name + """' placeholder='""" + self.caption + """' 
+                 field_object_name='""" + self.object_name + """'  
                   id='x_""" + self.object_name + """' name='x_""" + self.object_name + """' 
                   value='""" + str(self.ex_search["value"]) + """'></input>
                 <script>
@@ -288,7 +281,7 @@ class TableFieldBase:
                 html += """
                 <span class="badge bg-info">AND</span>
                 <input class='form-control' table_object_name='""" + self.table_object_name + """' 
-                 field_object_name='y_""" + self.object_name + """' placeholder='""" + self.caption + """2' 
+                 field_object_name='y_""" + self.object_name + """'  
                   id='y_""" + self.object_name + """' name='y_""" + self.object_name + """' 
                   value='""" + str(self.ex_search["value2"]) + """'></input>
                 <script>
@@ -308,8 +301,7 @@ class TableFieldBase:
             return str("""
                 <div class='col-lg-8 row'>
                 <input hidden='true' disabled='true' class='form-control' table_object_name='""" + self.table_object_name
-                    + """' field_object_name='""" + self.object_name + """' placeholder='"""
-                    + self.caption + """' id='x_""" + self.object_name + """' name='x_"""
+                    + """' field_object_name='""" + self.object_name + """'  id='x_""" + self.object_name + """' name='x_"""
                     + self.object_name + """' value='""" + str(
                         self.current_value) + """'></input>
                 <form id='form_for_x_""" + self.object_name + """' action="upload_file" method="post" 
@@ -332,8 +324,7 @@ class TableFieldBase:
             return str("""
                         <div class='col-lg-8'>
                         <input hidden='true' disabled='true' class='form-control' table_object_name='""" + self.table_object_name
-                   + """' field_object_name='""" + self.object_name + """' placeholder='"""
-                   + self.caption + """' id='x_""" + self.object_name + """' name='x_"""
+                   + """' field_object_name='""" + self.object_name + """'  id='x_""" + self.object_name + """' name='x_"""
                    + self.object_name + """' value='""" + (str(
             self.current_value) if is_empty(self.current_value) is False else "")  + """'></input>
                         <form id='form_for_x_""" + self.object_name + """' action="upload_file" method="post" 
@@ -357,8 +348,7 @@ class TableFieldBase:
             return str("""
                 <div class='col-lg-8'>
                 <textarea class='form-control' table_object_name='""" + self.table_object_name
-                       + """' field_object_name='""" + self.object_name + """' placeholder='"""
-                       + self.caption + """' id='x_""" + self.object_name + """' name='x_"""
+                       + """' field_object_name='""" + self.object_name + """'  id='x_""" + self.object_name + """' name='x_"""
                        + self.object_name + """' >""" + self.str_default_add() + """</textarea>
                 </div>
             """)
@@ -368,8 +358,7 @@ class TableFieldBase:
                 <textarea """ + (
                 "hidden='true' disabled='true'" if self.object_name == "id" else "")
                     + """ class='form-control' table_object_name='""" + self.table_object_name
-                    + """' field_object_name='""" + self.object_name + """' placeholder='"""
-                    + self.caption + """' id='x_""" + self.object_name + """' name='x_"""
+                    + """' field_object_name='""" + self.object_name + """'  id='x_""" + self.object_name + """' name='x_"""
                     + self.object_name + """' >""" + ( "" if is_empty(self.current_value) else str(self.current_value) )  + """</textarea>
                 </div>
             """)
@@ -377,8 +366,7 @@ class TableFieldBase:
             return str("""
                 <div class='col-lg-8'>
                 <textarea class='form-control' table_object_name='""" + self.table_object_name
-                       + """' field_object_name='""" + self.object_name + """' placeholder='"""
-                       + self.caption + """' id='x_""" + self.object_name + """' name='x_"""
+                       + """' field_object_name='""" + self.object_name + """'  id='x_""" + self.object_name + """' name='x_"""
                        + self.object_name + """' >""" + self.str_default_add() + """</textarea>
                 </div>
                 <script>
@@ -408,8 +396,7 @@ class TableFieldBase:
                 <textarea """ + (
                 "hidden='true' disabled='true'" if self.object_name == "id" else "")
                     + """ class='form-control' table_object_name='""" + self.table_object_name
-                    + """' field_object_name='""" + self.object_name + """' placeholder='"""
-                    + self.caption + """' id='x_""" + self.object_name + """' name='x_"""
+                    + """' field_object_name='""" + self.object_name + """'  id='x_""" + self.object_name + """' name='x_"""
                     + self.object_name + """' >""" + ( "" if is_empty(self.current_value) else str(self.current_value) )  + """</textarea>
                 </div>
                 <script>
@@ -437,7 +424,7 @@ class TableFieldBase:
             html = """
                 <div class='col-lg-8'>
                 <input hidden class='form-control' table_object_name='""" + self.table_object_name + """' 
-                   field_object_name='""" + self.object_name + """' placeholder='""" + self.caption + """' 
+                   field_object_name='""" + self.object_name + """'  
                    id='x_""" + self.object_name + """' name='x_""" + self.object_name + """' 
                    value='""" + self.str_default_add() + """'></input>
                 """
@@ -465,7 +452,7 @@ class TableFieldBase:
             html = """
                 <div class='col-lg-8'>
                 <input hidden class='form-control' table_object_name='""" + self.table_object_name + """' 
-                   field_object_name='""" + self.object_name + """' placeholder='""" + self.caption + """' 
+                   field_object_name='""" + self.object_name + """'  
                    id='x_""" + self.object_name + """' name='x_""" + self.object_name + """' 
                    value='""" + ( "" if is_empty(self.current_value) else str(self.current_value) ) + """'></input>
                 """
@@ -493,7 +480,7 @@ class TableFieldBase:
             html = """
                 <div class='col-lg-8'>
                 <input hidden class='form-control' table_object_name='""" + self.table_object_name + """' 
-                   field_object_name='""" + self.object_name + """' placeholder='""" + self.caption + """' 
+                   field_object_name='""" + self.object_name + """'  
                    id='xf_""" + self.object_name + """' name='xf_""" + self.object_name + """' 
                    value='""" + self.ex_search["value"] + """'></input>
                 """
@@ -521,7 +508,7 @@ class TableFieldBase:
             html = """
                 <div class='col-lg-8'>
                 <input hidden class='form-control' table_object_name='""" + self.table_object_name + """' 
-                   field_object_name='""" + self.object_name + """' placeholder='""" + self.caption + """' 
+                   field_object_name='""" + self.object_name + """'  
                    id='x_""" + self.object_name + """' name='x_""" + self.object_name + """' 
                    value='""" + self.str_default_add() + """'></input>
                 """
@@ -549,7 +536,7 @@ class TableFieldBase:
             html = """
                 <div class='col-lg-8'>
                 <input hidden class='form-control' table_object_name='""" + self.table_object_name + """' 
-                   field_object_name='""" + self.object_name + """' placeholder='""" + self.caption + """' 
+                   field_object_name='""" + self.object_name + """'  
                    id='x_""" + self.object_name + """' name='x_""" + self.object_name + """' 
                    value='""" + ( "" if is_empty(self.current_value) else str(self.current_value) ) + """'></input>
                 """
@@ -579,7 +566,7 @@ class TableFieldBase:
             html = """
                 <div class='col-lg-8'>
                 <input hidden class='form-control' table_object_name='""" + self.table_object_name + """' 
-                   field_object_name='""" + self.object_name + """' placeholder='""" + self.caption + """' 
+                   field_object_name='""" + self.object_name + """'  
                    id='xf_""" + self.object_name + """' name='xf_""" + self.object_name + """' 
                    value='""" + self.ex_search["value"] + """'></input>
                 """
@@ -619,7 +606,7 @@ class TableFieldBase:
             html = """
                 <div class='col-lg-8'>
                 <select class='form-control' table_object_name='""" + self.table_object_name + """' field_object_name
-                ='""" + self.object_name + """' placeholder='""" + self.caption + """' id='x_""" + self.object_name +\
+                ='""" + self.object_name + """'  id='x_""" + self.object_name +\
                    """' name='x_""" + self.object_name + """' > 
                    <option value=''>""" + Lang.phrase('please_select') + """</option>
                 """
@@ -639,7 +626,7 @@ class TableFieldBase:
             html = """
                 <div class='col-lg-8'>
                 <select class='form-control' table_object_name='""" + self.table_object_name + """' field_object_name
-                ='""" + self.object_name + """' placeholder='""" + self.caption + """' id='x_""" + self.object_name +\
+                ='""" + self.object_name + """'  id='x_""" + self.object_name +\
                    """' name='x_""" + self.object_name + """' > 
                    <option value=''>""" + Lang.phrase('please_select') + """</option>
                 """
@@ -659,7 +646,7 @@ class TableFieldBase:
             html = """
                 <div class='col-lg-8'>
                 <select class='form-control' table_object_name='""" + self.table_object_name + """' field_object_name
-                ='""" + self.object_name + """' placeholder='""" + self.caption + """' id='x_""" + self.object_name +\
+                ='""" + self.object_name + """'  id='x_""" + self.object_name +\
                    """' name='x_""" + self.object_name + """' > 
                    <option value=''>""" + Lang.phrase('please_select') + """</option>
                 """

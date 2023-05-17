@@ -2,9 +2,9 @@ from JailuApp.classes.base_structures import *
 from JailuApp.models import SatisfactionForm
 
 
-class TableSatisfactionForm(TableObjectBase):
+class TableMySatisfactionForm(TableObjectBase):
     # table specific settings
-    object_name = 'satisfaction_form'
+    object_name = 'my_satisfaction_form'
 
     # field settings
     fields = {
