@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ad8f488-6298-46a4-a2c7-10638774347c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/JailuApp/classes/base_structures.py" beforeDir="false" afterPath="$PROJECT_DIR$/JailuApp/classes/base_structures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JailuApp/classes/global_code.py" beforeDir="false" afterPath="$PROJECT_DIR$/JailuApp/classes/global_code.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JailuApp/classes/satisfaction_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/JailuApp/classes/satisfaction_form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JailuApp/lang/french.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JailuApp/lang/french.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JailuApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/JailuApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JailuApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/JailuApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JailuApp/classes/my_satisfaction_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/JailuApp/classes/my_satisfaction_form.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,8 +33,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JailuApp/classes/global_code.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="361" column="108" lean-forward="true" selection-start-line="361" selection-start-column="108" selection-end-line="361" selection-end-column="108" />
+            <state relative-caret-position="181">
+              <caret line="283" column="57" selection-start-line="283" selection-start-column="57" selection-end-line="283" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -47,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/JailuApp/lang/french.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="392">
-              <caret line="130" column="80" lean-forward="true" selection-start-line="130" selection-start-column="80" selection-end-line="130" selection-end-column="80" />
+              <caret line="130" column="80" selection-start-line="130" selection-start-column="80" selection-end-line="130" selection-end-column="80" />
             </state>
           </provider>
         </entry>
@@ -56,16 +52,16 @@
         <entry file="file://$PROJECT_DIR$/JailuApp/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="137">
-              <caret line="100" column="68" lean-forward="true" selection-start-line="100" selection-start-column="68" selection-end-line="100" selection-end-column="68" />
+              <caret line="100" column="68" selection-start-line="100" selection-start-column="68" selection-end-line="100" selection-end-column="68" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JailuApp/classes/my_satisfaction_form.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+            <state relative-caret-position="310">
+              <caret line="160" column="8" lean-forward="true" selection-start-line="160" selection-start-column="8" selection-end-line="160" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -82,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JailuApp/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="445">
-              <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
+              <caret line="121" selection-start-line="121" selection-end-line="121" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -106,8 +102,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>placeholder</find>
-      <find>menu</find>
       <find>CS</find>
+      <find>menu</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -122,13 +118,13 @@
         <option value="$PROJECT_DIR$/JailuApp/classes/satisfaction_form.py" />
         <option value="$PROJECT_DIR$/JailuApp/models.py" />
         <option value="$PROJECT_DIR$/JailuApp/lang/french.xml" />
-        <option value="$PROJECT_DIR$/JailuApp/classes/global_code.py" />
         <option value="$PROJECT_DIR$/JailuApp/views.py" />
+        <option value="$PROJECT_DIR$/JailuApp/classes/global_code.py" />
         <option value="$PROJECT_DIR$/JailuApp/classes/my_satisfaction_form.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -241,12 +237,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684237103152</updated>
-      <workItem from="1684237109640" duration="15752000" />
+      <workItem from="1684237109640" duration="16720000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15752000" />
+    <option name="totallyTimeSpent" value="16720000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -357,38 +353,38 @@
     <entry file="file://$PROJECT_DIR$/JailuApp/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
-          <caret line="100" column="68" lean-forward="true" selection-start-line="100" selection-start-column="68" selection-end-line="100" selection-end-column="68" />
+          <caret line="100" column="68" selection-start-line="100" selection-start-column="68" selection-end-line="100" selection-end-column="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JailuApp/lang/french.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
-          <caret line="130" column="80" lean-forward="true" selection-start-line="130" selection-start-column="80" selection-end-line="130" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JailuApp/classes/global_code.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="361" column="108" lean-forward="true" selection-start-line="361" selection-start-column="108" selection-end-line="361" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JailuApp/classes/my_satisfaction_form.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+          <caret line="130" column="80" selection-start-line="130" selection-start-column="80" selection-end-line="130" selection-end-column="80" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JailuApp/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="445">
-          <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
+          <caret line="121" selection-start-line="121" selection-end-line="121" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JailuApp/classes/global_code.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="283" column="57" selection-start-line="283" selection-start-column="57" selection-end-line="283" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JailuApp/classes/my_satisfaction_form.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="160" column="8" lean-forward="true" selection-start-line="160" selection-start-column="8" selection-end-line="160" selection-end-column="8" />
         </state>
       </provider>
     </entry>

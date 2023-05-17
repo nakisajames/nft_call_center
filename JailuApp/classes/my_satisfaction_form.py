@@ -156,16 +156,9 @@ class TableMySatisfactionForm(TableObjectBase):
         where 1=1 """
 
         # apply filters if available
-        if is_empty(self.fields["agent"].ex_search["value"]) is False:
-            sql += " and det.agent_id = %s "
-            sql_parameter.append(str(self.fields["agent"].ex_search["value"]))
-        if is_empty(self.fields["entry_date"].ex_search["value"]) is False and is_empty(
-                self.fields["entry_date"].ex_search["value2"]) is False:
-            sql += """ and ( det.entry_date >= %s and det.entry_date <= %s) """
-            sql_parameter.append(self.fields["entry_date"].ex_search["value"])
-            sql_parameter.append(self.fields["entry_date"].ex_search["value2"])
+        sql += " and det.agent_id = %s "
+        sql_parameter.append(current_user_id())
 
-        # apply filters if available
         # apply sort
         sql += " order by det.entry_date DESC"
         # apply limit and offset
